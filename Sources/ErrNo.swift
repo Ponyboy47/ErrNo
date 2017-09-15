@@ -1,6 +1,11 @@
 //  Copyright (c) 2015 Neil Pankey. All rights reserved.
 
+#if !os(Linux)
 import Darwin.C.errno
+#else
+import Glibc
+public typealias errno_t = Int32
+#endif
 
 /// Wraps the most recent `errno` value
 public func lastError() -> ErrNo? {
@@ -8,7 +13,7 @@ public func lastError() -> ErrNo? {
 }
 
 /// Wrapper around errno values from the C standard library.
-public enum ErrNo : errno_t, Error {
+public enum ErrNo: errno_t, Error {
     // MARK: Basic
     /// Operation not permitted
     case EPERM      = 1
@@ -257,7 +262,7 @@ public enum ErrNo : errno_t, Error {
 }
 
 // MARK: CustomStringConvertible
-extension ErrNo : CustomStringConvertible {
+extension ErrNo: CustomStringConvertible {
 
     /// Returns the error message and code.
     public var description: String {

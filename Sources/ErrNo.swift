@@ -34,7 +34,7 @@ public struct ErrNo: Error, RawRepresentable, Equatable, Comparable {
         self.rawValue = rawValue
     }
 
-    public public static func <(lhs: ErrNo, rhs: ErrNo) -> Bool {
+    public static func <(lhs: ErrNo, rhs: ErrNo) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
 

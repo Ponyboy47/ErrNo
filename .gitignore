@@ -2,3 +2,6 @@
 
 # Swift build
 .build/
+
+# vim
+# .*.sw[po]

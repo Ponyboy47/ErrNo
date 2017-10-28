@@ -128,7 +128,4 @@ public struct ErrNo: Error, RawRepresentable, Equatable, Comparable {
     public static let EDOM: RawValue = 33
     /// Math result not representable, result too large (POSIX.1, C99)
     public static let ERANGE: RawValue = 34
-
-    /// Operation would block
-    public static let EWOULDBLOCK = ErrNo.EAGAIN
 }

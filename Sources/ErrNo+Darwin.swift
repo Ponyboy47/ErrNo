@@ -7,6 +7,8 @@ public extension ErrNo {
 /* non-blocking and interrupt i/o */
     /// Resource temporarily unavailable
     public static let EAGAIN = ErrNo(rawValue: Darwin.EAGAIN)
+    /// Operation would block
+    public static let EWOULDBLOCK = ErrNo(rawValue: Darwin.EWOULDBLOCK)
     /// Operation now in progress
     public static let EINPROGRESS = ErrNo(rawValue: Darwin.EINPROGRESS)
     /// Operation already in progress
@@ -30,7 +32,7 @@ public extension ErrNo {
     /// Operation not supported
     public static let ENOTSUP = ErrNo(rawValue: Darwin.ENOTSUP)
     /// Operation not supported on socket
-    public static let EOPNOTSUPP = ErrNo.ENOTSUP
+    public static let EOPNOTSUPP = ErrNo(rawValue: Darwin.EOPNOTSUPP)
     /// Protocol family not supported
     public static let EPFNOSUPPORT = ErrNo(rawValue: Darwin.EPFNOSUPPORT)
     /// Address family not supported by protocol family

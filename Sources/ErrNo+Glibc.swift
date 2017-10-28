@@ -7,9 +7,11 @@ import Glibc
 public extension ErrNo {
     /// Resource temporarily unavailable (POSIX.1)
     public static let EAGAIN = ErrNo(rawValue: Glibc.EAGAIN)
+    /// Operation would block
+    public static let EWOULDBLOCK = ErrNo(rawValue: Glibc.EWOULDBLOCK)
     /// Resource deadlock would occur
     public static let EDEADLK = ErrNo(rawValue: Glibc.EDEADLK)
-    public static let EDEADLOCK = ErrNo.EDEADLK
+    public static let EDEADLOCK = ErrNo(rawValue: Glibc.EDEADLOCK)
     /// File name too long
     public static let ENAMETOOLONG = ErrNo(rawValue: Glibc.ENAMETOOLONG)
     /// No record locks available

@@ -1,7 +1,9 @@
 .DS_Store
+.AppleDouble
 
 # Swift build
 .build/
+Package.resolved
 
 # vim
-# .*.sw[po]
+ .*.sw[po]

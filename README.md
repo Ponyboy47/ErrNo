@@ -6,12 +6,13 @@ Supported on both macOS and Linux (Ubuntu). Uses standard ErrNo's, as well as pl
 
 ## Installation
 
-Requires `Swift 3` and is built via the package manager via `swift build`.
+Requires `Swift 4` and is built via the package manager via `swift build`.
 
 Include this in your Package.swift dependencies
 ```swift
-.Package(url: "https://github.com/Ponyboy47/ErrNo.swift", majorVersion: 0, minor: 2)
+.package(url: "https://github.com/Ponyboy47/ErrNo.swift", .upToNextMinor("0.3.0"))
 ```
+For Swift 3 use version 0.2.5
 
 ## Usage
 

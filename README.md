@@ -10,7 +10,7 @@ Requires `Swift 4` and is built via the package manager via `swift build`.
 
 Include this in your Package.swift dependencies
 ```swift
-.package(url: "https://github.com/Ponyboy47/ErrNo.swift", .upToNextMinor("0.3.0"))
+.package(url: "https://github.com/Ponyboy47/ErrNo.swift", .upToNextMinor(from: "0.3.0"))
 ```
 For Swift 3 use version 0.2.5
 

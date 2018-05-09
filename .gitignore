@@ -6,4 +6,5 @@
 Package.resolved
 
 # vim
- .*.sw[po]
+*.sw[po]
+*.vimsession

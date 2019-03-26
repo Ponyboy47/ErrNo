@@ -29,7 +29,7 @@ public func lastError() -> ErrNo {
 
 public extension ErrNo {
     /// An ErrNo using the most current value of `errno`
-    public static var lastError: ErrNo { return ErrNo(rawValue: errno) }
+    static var lastError: ErrNo { return ErrNo(rawValue: errno) }
 }
 
 /// Wrapper around errno values from the C standard library.

@@ -1,10 +1,10 @@
-//  Copyright (c) 2017 Neil Pankey & Jacob Williams. All rights reserved.
+// Copyright (c) 2019 Neil Pankey & Jacob Williams. All rights reserved.
 
 #if !os(Linux)
 import Darwin.C.errno
 
 public extension ErrNo {
-/* non-blocking and interrupt i/o */
+    /* non-blocking and interrupt i/o */
     /// Resource temporarily unavailable
     static let EAGAIN = ErrNo(rawValue: Darwin.EAGAIN)
     /// Operation would block
@@ -14,7 +14,7 @@ public extension ErrNo {
     /// Operation already in progress
     static let EALREADY = ErrNo(rawValue: Darwin.EALREADY)
 
-/* ipc/network software -- argument errors */
+    /* ipc/network software -- argument errors */
     /// Socket operation on non-socket
     static let ENOTSOCK = ErrNo(rawValue: Darwin.ENOTSOCK)
     /// Destination address required
@@ -42,7 +42,7 @@ public extension ErrNo {
     /// Can't assign requested address
     static let EADDRNOTAVAIL = ErrNo(rawValue: Darwin.EADDRNOTAVAIL)
 
-/* ipc/network software -- operational errors */
+    /* ipc/network software -- operational errors */
     /// Network is down
     static let ENETDOWN = ErrNo(rawValue: Darwin.ENETDOWN)
     /// Network is unreachable
@@ -80,7 +80,7 @@ public extension ErrNo {
     /// Directory not empty
     static let ENOTEMPTY = ErrNo(rawValue: Darwin.ENOTEMPTY)
 
-/* quotas & mush */
+    /* quotas & mush */
     /// Too many processes
     static let EPROCLIM = ErrNo(rawValue: Darwin.EPROCLIM)
     /// Too many users
@@ -88,7 +88,7 @@ public extension ErrNo {
     /// Disc quota exceeded
     static let EDQUOT = ErrNo(rawValue: Darwin.EDQUOT)
 
-/* Network File System */
+    /* Network File System */
     /// Stale NFS file handle
     static let ESTALE = ErrNo(rawValue: Darwin.ESTALE)
     /// Too many levels of remote in path
@@ -116,7 +116,7 @@ public extension ErrNo {
     /// Need authenticator
     static let ENEEDAUTH = ErrNo(rawValue: Darwin.ENEEDAUTH)
 
-/* Intelligent device errors */
+    /* Intelligent device errors */
     /// Device power is off
     static let EPWROFF = ErrNo(rawValue: Darwin.EPWROFF)
     /// Device error, e.g. paper out
@@ -125,7 +125,7 @@ public extension ErrNo {
     /// Value too large to be stored in data type
     static let EOVERFLOW = ErrNo(rawValue: Darwin.EOVERFLOW)
 
-/* Program loading errors */
+    /* Program loading errors */
     /// Bad executable
     static let EBADEXEC = ErrNo(rawValue: Darwin.EBADEXEC)
     /// Bad CPU type in executable
@@ -141,7 +141,7 @@ public extension ErrNo {
     /// Identifier removed
     static let EIDRM = ErrNo(rawValue: Darwin.EIDRM)
     /// No message of desired type
-    static let ENOMSG = ErrNo(rawValue: Darwin.ENOMSG)   
+    static let ENOMSG = ErrNo(rawValue: Darwin.ENOMSG)
     /// Illegal byte sequence
     static let EILSEQ = ErrNo(rawValue: Darwin.EILSEQ)
     /// Attribute not found

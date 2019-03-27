@@ -1,4 +1,4 @@
-//  Copyright (c) 2017 Neil Pankey and Jacob Williams. All rights reserved.
+// Copyright (c) 2019 Neil Pankey & Jacob Williams. All rights reserved.
 
 #if !os(Linux)
 import Darwin.C.errno
@@ -8,8 +8,8 @@ public typealias errno_t = Int32
 #endif
 
 // MARK: CustomStringConvertible
-extension ErrNo: CustomStringConvertible {
 
+extension ErrNo: CustomStringConvertible {
     /// Returns the error message and code.
     public var description: String {
         return "\(message) (\(rawValue))"
@@ -17,7 +17,7 @@ extension ErrNo: CustomStringConvertible {
 
     /// Lookup error message specific to `ErrNo`.
     public var message: String {
-        return String(cString: strerror(self.rawValue))
+        return String(cString: strerror(rawValue))
     }
 }
 
@@ -42,31 +42,39 @@ public struct ErrNo: Error, RawRepresentable, Equatable, Comparable {
         self.rawValue = rawValue
     }
 
-    public static func ==(lhs: ErrNo, rhs: ErrNo) -> Bool {
+    public static func == (lhs: ErrNo, rhs: ErrNo) -> Bool {
         return lhs.rawValue == rhs.rawValue
     }
-    public static func ==(lhs: RawValue, rhs: ErrNo) -> Bool {
+
+    public static func == (lhs: RawValue, rhs: ErrNo) -> Bool {
         return lhs == rhs.rawValue
     }
-    public static func ==(lhs: ErrNo, rhs: RawValue) -> Bool {
+
+    public static func == (lhs: ErrNo, rhs: RawValue) -> Bool {
         return lhs.rawValue == rhs
     }
-    public static func ~=(lhs: ErrNo, rhs: ErrNo) -> Bool {
+
+    public static func ~= (lhs: ErrNo, rhs: ErrNo) -> Bool {
         return lhs.rawValue == rhs.rawValue
     }
-    public static func ~=(lhs: RawValue, rhs: ErrNo) -> Bool {
+
+    public static func ~= (lhs: RawValue, rhs: ErrNo) -> Bool {
         return lhs == rhs.rawValue
     }
-    public static func ~=(lhs: ErrNo, rhs: RawValue) -> Bool {
+
+    public static func ~= (lhs: ErrNo, rhs: RawValue) -> Bool {
         return lhs.rawValue == rhs
     }
-    public static func <(lhs: ErrNo, rhs: ErrNo) -> Bool {
+
+    public static func < (lhs: ErrNo, rhs: ErrNo) -> Bool {
         return lhs.rawValue < rhs.rawValue
     }
-    public static func <(lhs: ErrNo, rhs: RawValue) -> Bool {
+
+    public static func < (lhs: ErrNo, rhs: RawValue) -> Bool {
         return lhs.rawValue < rhs
     }
-    public static func <(lhs: RawValue, rhs: ErrNo) -> Bool {
+
+    public static func < (lhs: RawValue, rhs: ErrNo) -> Bool {
         return lhs < rhs.rawValue
     }
 

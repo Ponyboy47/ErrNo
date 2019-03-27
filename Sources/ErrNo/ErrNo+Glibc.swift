@@ -1,4 +1,4 @@
-//  Copyright (c) 2017 Neil Pankey & Jacob Williams. All rights reserved.
+// Copyright (c) 2019 Neil Pankey & Jacob Williams. All rights reserved.
 
 #if os(Linux)
 import Glibc
@@ -17,13 +17,13 @@ public extension ErrNo {
     /// No record locks available
     static let ENOLCK = ErrNo(rawValue: Glibc.ENOLCK)
 
-/*
- * This error code is special: arch syscall entry code will return
- * -ENOSYS if users try to call a syscall that doesn't exist.  To keep
- * failures of syscalls that really do exist distinguishable from
- * failures due to attempts to use a nonexistent syscall, syscall
- * implementations should refrain from returning -ENOSYS.
- */
+    /*
+     * This error code is special: arch syscall entry code will return
+     * -ENOSYS if users try to call a syscall that doesn't exist.  To keep
+     * failures of syscalls that really do exist distinguishable from
+     * failures due to attempts to use a nonexistent syscall, syscall
+     * implementations should refrain from returning -ENOSYS.
+     */
     /// Invalid system call number
     static let ENOSYS = ErrNo(rawValue: Glibc.ENOSYS)
 
@@ -208,7 +208,7 @@ public extension ErrNo {
     /// Key was rejected by service
     static let EKEYREJECTED = ErrNo(rawValue: Glibc.EKEYREJECTED)
 
-/* for robust mutexes */
+    /* for robust mutexes */
     /// Owner died
     static let EOWNERDEAD = ErrNo(rawValue: Glibc.EOWNERDEAD)
     /// State not recoverable

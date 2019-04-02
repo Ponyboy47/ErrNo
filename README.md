@@ -12,7 +12,7 @@ Requires `Swift 5` and is built via the package manager via `swift build`.
 
 Include this in your Package.swift dependencies
 ```swift
-.package(url: "https://github.com/Ponyboy47/ErrNo.swift", .upToNextMinor(from: "0.5.0"))
+.package(url: "https://github.com/Ponyboy47/ErrNo.swift", .upToNextMinor(from: "0.5.2"))
 ```
 For Swift 4 use version 0.4.x
 
